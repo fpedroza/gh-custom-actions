@@ -6,7 +6,7 @@ inputs:
     required: false
     default: 'true'
 outputs:
-  cached-used:
+  cache-used:
     description: 'Whether the cache was used'
     value: ${{ steps.install-deps.outputs.cached }}
 runs:
