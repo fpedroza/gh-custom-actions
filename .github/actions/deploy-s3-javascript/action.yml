@@ -4,13 +4,16 @@ inputs:
   bucket:
     description: 'S3 bucket name'
     required: true
-  bucketRegion:
+  bucket-region:
     description: 'S3 region name'
     required: false
     default: 'us-east-1'
   dist-folder:
     description: 'Path to the folder containing the deployable files'
     required: true
+outputs:
+  website-url:
+    description: 'The URL of the deployed website'
 runs:
   using: 'node16'
   main: 'main.js'

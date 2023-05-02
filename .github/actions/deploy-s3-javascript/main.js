@@ -13,9 +13,11 @@ function run() {
     // github.context.
 
     const s3Uri = `s3://${bucket}`;
-
+    
     exec.exec(`aws s3 sync ${s3Uri} ${distFolder} --region ${bucketRegion}`);
 
+    const websiteUrl = `http://${bucket}.s3-website-${bucketRegion}.amazonaws.com`;
+    core.setOutput('website-url', websiteUrl);
 }
 
 run();
